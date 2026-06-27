@@ -69,10 +69,20 @@ def inject_theme() -> None:
         }
 
         .stApp {
+            color-scheme: light;
             color: var(--sva-ink);
             background:
                 linear-gradient(180deg, #f3f7f6 0%, #f7f9fb 34%, #ffffff 100%);
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .stApp label,
+        .stApp p,
+        .stApp small,
+        .stApp [data-testid="stCaptionContainer"],
+        .stApp [data-testid="stWidgetLabel"],
+        .stApp [data-testid="stWidgetLabel"] p {
+            color: var(--sva-ink);
         }
 
         .block-container {
@@ -91,8 +101,18 @@ def inject_theme() -> None:
         }
 
         [data-testid="stSidebar"] {
+            color-scheme: light;
+            color: var(--sva-ink);
             background: #f8faf9;
             border-right: 1px solid var(--sva-line);
+        }
+
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] p,
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] small,
+        [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+            color: var(--sva-ink) !important;
         }
 
         [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
@@ -191,16 +211,31 @@ def inject_theme() -> None:
         }
 
         div[data-testid="stTabs"] [aria-selected="true"] {
-            color: white;
+            color: white !important;
             background: var(--sva-teal);
             box-shadow: 0 8px 18px rgba(15, 118, 110, 0.20);
         }
 
+        div[data-testid="stTabs"] [aria-selected="true"] *,
+        div[data-testid="stTabs"] [aria-selected="true"] p {
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+        }
+
         div[data-testid="stFileUploader"] section {
+            color-scheme: light;
             background: rgba(255, 255, 255, 0.82);
             border: 1px dashed rgba(15, 118, 110, 0.42);
             border-radius: 8px;
             box-shadow: var(--sva-shadow-soft);
+        }
+
+        div[data-testid="stFileUploader"] section,
+        div[data-testid="stFileUploader"] section p,
+        div[data-testid="stFileUploader"] section span,
+        div[data-testid="stFileUploader"] section small,
+        div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzoneInstructions"] {
+            color: var(--sva-muted) !important;
         }
 
         div[data-testid="stFileUploader"] button {
@@ -235,16 +270,51 @@ def inject_theme() -> None:
         }
 
         .stButton > button[kind="primary"] {
+            color: white !important;
             background: var(--sva-teal);
             border-color: var(--sva-teal-dark);
+        }
+
+        .stButton > button[kind="primary"] *,
+        .stButton > button[kind="primary"] p,
+        .stButton > button[kind="primary"] span {
+            color: white !important;
+            -webkit-text-fill-color: white !important;
         }
 
         div[data-baseweb="select"] > div,
         div[data-baseweb="input"] > div,
         textarea {
+            color-scheme: light;
+            color: var(--sva-ink) !important;
+            background: #ffffff !important;
             border-radius: 6px !important;
             border-color: #cdd6df !important;
             box-shadow: 0 1px 0 rgba(31, 41, 51, 0.04);
+        }
+
+        input,
+        textarea,
+        div[data-baseweb="select"] span,
+        div[data-baseweb="select"] input,
+        div[data-baseweb="input"] input {
+            color: var(--sva-ink) !important;
+            -webkit-text-fill-color: var(--sva-ink) !important;
+            caret-color: var(--sva-teal);
+        }
+
+        div[data-testid="stTextInput"] button,
+        div[data-baseweb="input"] button {
+            color: #334155 !important;
+            background: transparent !important;
+            border: 0 !important;
+            box-shadow: none !important;
+        }
+
+        div[data-testid="stTextInput"] svg,
+        div[data-baseweb="input"] svg {
+            color: #334155 !important;
+            fill: currentColor !important;
         }
 
         div[data-baseweb="input"]:focus-within > div,

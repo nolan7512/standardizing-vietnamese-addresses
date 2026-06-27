@@ -42,7 +42,9 @@ File override CSV dùng để vá các trường hợp trung gian không có tro
 .\.venv\Scripts\python -m streamlit run app.py
 ```
 
-Người dùng không rành kỹ thuật có thể double-click `run.bat`. File này sẽ tạo môi trường `.venv`, cài thư viện, tạo `.env` nếu chưa có, mở browser và chạy app tại `http://localhost:8501`.
+Người dùng không rành kỹ thuật có thể double-click `run.bat`. File này sẽ tạo môi trường `.venv`, cài thư viện, tạo `.env` nếu chưa có, mở browser và chạy app tại `http://127.0.0.1:8501`.
+
+Nếu Streamlit hỏi `Email:` ở lần chạy đầu tiên thì nhấn Enter để bỏ qua, hoặc dùng `run.bat` bản mới. Project đã có `.streamlit/config.toml` để tắt onboarding/usage prompt này.
 
 Mặc định app tải danh mục từ:
 
